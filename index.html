@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Chamados de TI</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Lista de Chamados de TI</h1>
+    <p>Cadastre e acompanhe os pedidos de suporte.</p>
+  </header>
+
+  <main class="container">
+    <section class="formulario">
+      <h2>Novo chamado</h2>
+      <form id="ticket-form">
+        <div class="campo">
+          <label for="requester">Nome do solicitante</label>
+          <input id="requester" name="requester" type="text" required>
+        </div>
+        <div class="campo">
+          <label for="department">Setor</label>
+          <input id="department" name="department" type="text" required>
+        </div>
+        <div class="campo">
+          <label for="problem">Problema</label>
+          <input id="problem" name="problem" type="text" required>
+        </div>
+        <div class="campo">
+          <label for="priority">Prioridade</label>
+          <select id="priority" name="priority">
+            <option>Baixa</option>
+            <option selected>Média</option>
+            <option>Alta</option>
+          </select>
+        </div>
+        <button type="submit">Adicionar chamado</button>
+      </form>
+    </section>
+
+    <section class="lista">
+      <h2>Chamados cadastrados</h2>
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Solicitante</th>
+              <th>Setor</th>
+              <th>Problema</th>
+              <th>Prioridade</th>
+              <th>Status</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="ticket-list"></tbody>
+        </table>
+        <p id="empty-message">Nenhum chamado cadastrado.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
